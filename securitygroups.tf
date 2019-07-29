@@ -42,6 +42,14 @@ resource "aws_security_group" "stellar-sg" {
     #security_groups = ["${aws_security_group.bastion-sg.id}"]
   }
 
+  ingress {
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+    cidr_blocks =  ["10.100.0.0/16"]
+    #security_groups = ["${aws_security_group.bastion-sg.id}"]
+  }
+
   egress {
     from_port = 443
     to_port = 443
