@@ -24,7 +24,7 @@ variable "DB_IDENTIFIER" { default = "stellar-core-db" }
 variable "key_path" {
   description = "SSH Public Key path"
   #default = "/root/.ssh/id_rsa.pub"
-  default = "/var/jenkins_home/workspace/Test-Job/terraform-test/ec2key/key.pub"
+  default = "/var/jenkins_home/workspace/Test-Job/terraform-test2/ec2key/key.pub"
 }
 
 #######################
