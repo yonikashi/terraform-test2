@@ -69,6 +69,12 @@ resource "aws_route_table" "web-private-rt" {
     gateway_id = "${aws_vpc_peering_connection.jenkinstocore.id}"
   }
 
+  }
+  route {
+    cidr_block = "10.100.0.0/16"
+    gateway_id = "${aws_vpc_peering_connection.mgmttocore.id}"
+  }
+
   tags = {
     Name = "Fed-Private-RT"
   }

@@ -12,3 +12,12 @@ resource "aws_vpc_peering_connection" "jenkinstocore" {
   }
 }
 
+resource "aws_vpc_peering_connection" "mgmttocore" {
+  peer_vpc_id   = "vpc-0200e5d2b83a9f5f1" 
+  vpc_id        = "${aws_vpc.Application-VPC.id}"
+  auto_accept   = true
+
+  tags = {
+    Name = "VPC Peering between Production-Vpc and Stellar-Vpc"
+  }
+}
