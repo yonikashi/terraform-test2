@@ -13,3 +13,14 @@ output "aws_prom_dns" {
   value = "${aws_lb.prometheus-nlb.dns_name}"
   description = "The address of Prometheus NLB"
 }
+
+output "aws_prod_peer" {
+  value = "${aws_vpc_peering_connection.jenkinstocore.id}"
+  description = "Peering connection of Production to update route table"
+}
+
+output "aws_mgmt_peer" {
+  value = "${aws_vpc_peering_connection.mgmttocore.id}"
+  description = "Peering connection of Production to update route table"
+}
+
