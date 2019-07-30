@@ -295,7 +295,7 @@ root_block_device {
 # Define Stellar-tests NLB#
 ###########################
 resource "aws_lb" "node1-nlb" {
-  name               = "node1-nlb"
+  name               = "node1-nlb-${var.SUFFIX}"
   internal           = true
   load_balancer_type = "network"
   subnets            = ["${aws_subnet.private-subnet.id}"]
