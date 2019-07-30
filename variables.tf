@@ -12,6 +12,11 @@ variable "SUFFIX" {
   default = "suf42"
 }
 
+variable "VPC_CIDR" {
+  description = "Unique CIDR for VPC"
+  default = "172.32"
+}
+
 variable "DB_USER" { default = "stellar" }
 variable "DB_PASS" { default = "defaultpassword" }
 variable "DB_NAME" { default = "core" }
@@ -41,27 +46,27 @@ variable "aws_region" {
 
 variable "app_vpc_cidr" {
   description = "CIDR for the VPC"
-  default = "172.32.0.0/16"
+  default = "${VPC_CIDR}.0.0/16"
 }
 
 variable "public_subnet_cidr" {
   description = "CIDR for the public subnet"
-  default = "172.32.16.0/20"
+  default = "${VPC_CIDR}.16.0/20"
 }
 
 variable "public_b_subnet_cidr" {
   description = "CIDR for the public subnet"
-  default = "172.32.32.0/20"
+  default = "${VPC_CIDR}.32.0/20"
 }
 
 variable "private_subnet_cidr" {
   description = "CIDR for the private subnet"
-  default = "172.32.0.0/20"
+  default = "${VPC_CIDR}.0.0/20"
 }
 
 variable "private_subnet_b_cidr" {
   description = "CIDR for the private subnet"
-  default = "172.32.48.0/20"
+  default = "${VPC_CIDR}.48.0/20"
 }
 
 variable "ami" {
