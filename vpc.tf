@@ -4,7 +4,7 @@
 
 # Define our VPC
 resource "aws_vpc" "Application-VPC" {
-  cidr_block = "${var.app_vpc_cidr}"
+  cidr_block = "${var.VPC_CIDR}${var.app_vpc_cidr}"
   enable_dns_hostnames = true
 
   tags = {

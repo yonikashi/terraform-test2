@@ -5,7 +5,7 @@
 # Define main public subnet
 resource "aws_subnet" "public-subnet" {
   vpc_id = "${aws_vpc.Application-VPC.id}"
-  cidr_block = "${var.public_subnet_cidr}"
+  cidr_block = "${var.VPC_CIDR}${var.public_subnet_cidr}"
   availability_zone = "${var.aws_region}a"
 
   tags = {
@@ -17,7 +17,7 @@ resource "aws_subnet" "public-subnet" {
 # Define second public subnet
 resource "aws_subnet" "public-subnet-b" {
   vpc_id = "${aws_vpc.Application-VPC.id}"
-  cidr_block = "${var.public_b_subnet_cidr}"
+  cidr_block = "${var.VPC_CIDR}${var.public_b_subnet_cidr}"
   availability_zone = "${var.aws_region}b"
 
   tags = {
@@ -28,7 +28,7 @@ resource "aws_subnet" "public-subnet-b" {
 # Define main private subnet
 resource "aws_subnet" "private-subnet" {
   vpc_id = "${aws_vpc.Application-VPC.id}"
-  cidr_block = "${var.private_subnet_cidr}"
+  cidr_block = "${var.VPC_CIDR}${var.private_subnet_cidr}"
   availability_zone = "${var.aws_region}b"
 
   tags = {
@@ -39,7 +39,7 @@ resource "aws_subnet" "private-subnet" {
 # Define second private subnet
 resource "aws_subnet" "private-subnet-b" {
   vpc_id = "${aws_vpc.Application-VPC.id}"
-  cidr_block = "${var.private_subnet_b_cidr}"
+  cidr_block = "${var.VPC_CIDR}${var.private_subnet_b_cidr}"
   availability_zone = "${var.aws_region}a"
 
   tags = {
