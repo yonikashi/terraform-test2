@@ -25,6 +25,15 @@ variable "DB_IDENTIFIER" { default = "stellar-core-db" }
 #####################
 # Key to launch EC2 #
 #####################
+variable "job_folder" {
+  description = "SSH Public Key path"
+  default = "terraform-test2"
+}
+
+variable "job_workspace" {
+  description = "SSH Public Key path"
+  default = "/var/jenkins_home/workspace/Test-Job3/"
+}
 
 variable "key_path" {
   description = "SSH Public Key path"
