@@ -16,7 +16,7 @@ root_block_device {
   }
 
   tags = {
-    Name = "Promehteus-Server"
+    Name = "Promehteus-Server-${var.SUFFIX}"
   }
 }
 ############################
@@ -40,7 +40,7 @@ root_block_device {
   }
 
   tags = {
-    Name = "test-load-client-1"
+    Name = "test-load-client-1-${var.SUFFIX}"
   }
 }
 
@@ -74,7 +74,7 @@ root_block_device {
   }
 
   tags = {
-    Name = "test-horizon-1"
+    Name = "test-horizon-1-${var.SUFFIX}"
   }
 }
 
@@ -116,7 +116,7 @@ root_block_device {
   }
 
   tags = {
-    Name = "test-core-1"
+    Name = "test-core-1-${var.SUFFIX}"
   }
 }
 
@@ -150,7 +150,7 @@ root_block_device {
   }
 
   tags = {
-    Name = "test-core-2"
+    Name = "test-core-2-${var.SUFFIX}"
   }
 }
 
@@ -183,7 +183,7 @@ root_block_device {
   }
 
   tags = {
-    Name = "test-core-3"
+    Name = "test-core-3-${var.SUFFIX}"
   }
 }
 
@@ -216,7 +216,7 @@ root_block_device {
   }
 
   tags = {
-    Name = "test-core-4"
+    Name = "test-core-4-${var.SUFFIX}"
   }
 }
 
@@ -249,7 +249,7 @@ root_block_device {
   }
 
   tags = {
-    Name = "test-core-5"
+    Name = "test-core-5-${var.SUFFIX}"
   }
 }
 
@@ -285,7 +285,7 @@ root_block_device {
   }
 
   tags = {
-    Name = "test-watcher-core-1"
+    Name = "test-watcher-core-1-${var.SUFFIX}"
   }
 }
 
@@ -320,7 +320,7 @@ resource "aws_lb_listener" "stellar1_front_end" {
 
 
 resource "aws_lb_target_group" "node1-nlb-tg" {
-  name     = "node1-nlb-tg"
+  name     = "node1-nlb-tg-${var.SUFFIX}"
   port     = 11625
   protocol = "TCP"
   target_type = "instance"
@@ -336,7 +336,7 @@ resource "aws_lb_target_group_attachment" "attach1" {
 # Define Stellar-2 NLB #
 ######################
 resource "aws_lb" "node2-nlb" {
-  name               = "node2-nlb"
+  name               = "node2-nlb-${var.SUFFIX}"
   internal           = true
   load_balancer_type = "network"
   subnets            = ["${aws_subnet.private-subnet.id}"]
@@ -361,7 +361,7 @@ resource "aws_lb_listener" "stellar2_front_end" {
 
 
 resource "aws_lb_target_group" "node2-nlb-tg" {
-  name     = "node2-nlb-tg"
+  name     = "node2-nlb-tg-${var.SUFFIX}"
   port     = 11625
   protocol = "TCP"
   target_type = "instance"
@@ -377,7 +377,7 @@ resource "aws_lb_target_group_attachment" "attach2" {
 # Define Stellar 3 NLB #
 ########################
 resource "aws_lb" "node3-nlb" {
-  name               = "node3-nlb"
+  name               = "node3-nlb-${var.SUFFIX}"
   internal           = true
   load_balancer_type = "network"
   subnets            = ["${aws_subnet.private-subnet.id}"]
@@ -402,7 +402,7 @@ resource "aws_lb_listener" "stellar3_front_end" {
 
 
 resource "aws_lb_target_group" "node3-nlb-tg" {
-  name     = "node3-nlb-tg"
+  name     = "node3-nlb-tg-${var.SUFFIX}"
   port     = 11625
   protocol = "TCP"
   target_type = "instance"
@@ -418,7 +418,7 @@ resource "aws_lb_target_group_attachment" "attach3" {
 # Define Stellar-4 NLB #
 ######################
 resource "aws_lb" "node4-nlb" {
-  name               = "node4-nlb"
+  name               = "node4-nlb-${var.SUFFIX}"
   internal           = true
   load_balancer_type = "network"
   subnets            = ["${aws_subnet.private-subnet.id}"]
@@ -443,7 +443,7 @@ resource "aws_lb_listener" "stellar4_front_end" {
 
 
 resource "aws_lb_target_group" "node4-nlb-tg" {
-  name     = "node4-nlb-tg"
+  name     = "node4-nlb-tg-${var.SUFFIX}"
   port     = 11625
   protocol = "TCP"
   target_type = "instance"
@@ -460,7 +460,7 @@ resource "aws_lb_target_group_attachment" "attach4" {
 # Define Stellar 5 NLB #
 ######################
 resource "aws_lb" "node5-nlb" {
-  name               = "node5-nlb"
+  name               = "node5-nlb-${var.SUFFIX}"
   internal           = true
   load_balancer_type = "network"
   subnets            = ["${aws_subnet.private-subnet.id}"]
@@ -485,7 +485,7 @@ resource "aws_lb_listener" "stellar5_front_end" {
 
 
 resource "aws_lb_target_group" "node5-nlb-tg" {
-  name     = "node5-nlb-tg"
+  name     = "node5-nlb-tg-${var.SUFFIX}"
   port     = 11625
   protocol = "TCP"
   target_type = "instance"
@@ -503,7 +503,7 @@ resource "aws_lb_target_group_attachment" "attach5" {
 # Define Prometheus ALB #
 #########################
 resource "aws_lb" "prometheus-nlb" {
-  name               = "prometheus-alb"
+  name               = "prometheus-alb-${var.SUFFIX}"
   internal           = false
   load_balancer_type = "application"
   subnets            = ["${aws_subnet.public-subnet.id}", "${aws_subnet.public-subnet-b.id}"]
@@ -528,7 +528,7 @@ resource "aws_lb_listener" "prometheus_front_end" {
 
 
 resource "aws_lb_target_group" "prometheus-nlb-tg" {
-  name     = "prometheus-alb-tg"
+  name     = "prometheus-alb-tg-${var.SUFFIX}"
   port     = 9090
   protocol = "HTTP"
   target_type = "instance"

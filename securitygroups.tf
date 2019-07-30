@@ -1,14 +1,21 @@
-###########################################################
+\###########################################################
 # Define the security group for Stellar - Application-VPC #
 ###########################################################
 
 resource "aws_security_group" "stellar-sg" {
-  name = "stellar-sg"
+  name = "stellar-sg-${var.SUFFIX}"
   description = "Allow incoming HTTP connections & SSH access"
 
   ingress {
     from_port = 9090
     to_port = 9090
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port = 80
+    to_port = 80
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -118,6 +125,15 @@ resource "aws_security_group" "stellar-sg" {
   egress {
     from_port = 9090
     to_port = 9090
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    #security_groups = ["${aws_security_group.bastion-sg.id}"]
+    #description = "ssh connection Bastion"
+  }
+
+  egress {
+    from_port = 80
+    to_port = 80
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
     #security_groups = ["${aws_security_group.bastion-sg.id}"]

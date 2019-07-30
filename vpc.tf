@@ -8,7 +8,7 @@ resource "aws_vpc" "Application-VPC" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "Stellar-Tests-VPC"
+    Name = "Stellar-Tests-VPC-${var.SUFFIX}"
   }
 }
 
@@ -17,7 +17,7 @@ resource "aws_internet_gateway" "gw" {
   vpc_id = "${aws_vpc.Application-VPC.id}"
 
   tags = {
-    Name = "Stellar-Tests-IGW"
+    Name = "Stellar-Tests-IGW-${var.SUFFIX}"
   }
 }
 
@@ -45,7 +45,7 @@ resource "aws_route_table" "web-public-rt" {
     gateway_id = "${aws_vpc_peering_connection.jenkinstocore.id}"
   }
   tags = {
-    Name = "Fed-Public-RT"
+    Name = "Fed-Public-RT-${var.SUFFIX}"
   }
 }
 
@@ -75,7 +75,7 @@ resource "aws_route_table" "web-private-rt" {
   }
 
   tags = {
-    Name = "Fed-Private-RT"
+    Name = "Fed-Private-RT-${var.SUFFIX}"
   }
 }
 

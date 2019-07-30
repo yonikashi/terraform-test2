@@ -8,7 +8,7 @@ resource "aws_vpc_peering_connection" "jenkinstocore" {
   auto_accept   = true
 
   tags = {
-    Name = "VPC Peering between Managment-Vpc and Testing-Vpc"
+    Name = "VPC Peering between Managment-Vpc and Testing-Vpc-${var.SUFFIX}"
   }
 }
 
@@ -18,6 +18,6 @@ resource "aws_vpc_peering_connection" "mgmttocore" {
   auto_accept   = true
 
   tags = {
-    Name = "VPC Peering between Production-Vpc and Stellar-Vpc"
+    Name = "VPC Peering between Production-Vpc and Stellar-Vpc-${var.SUFFIX}"
   }
 }

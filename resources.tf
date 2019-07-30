@@ -1,7 +1,7 @@
 
 # Define SSH key pair for our instances
 resource "aws_key_pair" "default" {
-  key_name = "default-key"
+  key_name = "default-key-${var.SUFFIX}"
   public_key = "${file("${var.key_path}")}"
 }
 
@@ -25,7 +25,7 @@ resource "aws_key_pair" "default" {
 #  }   
 
 #  tags = {
-#    Name = "Stellar-core"
+#    Name = "Stellar-core-${var.SUFFIX}"
 #  }
 #}
 
@@ -43,7 +43,7 @@ resource "aws_key_pair" "default" {
 #  }
 
 #  tags = {
-#    Name = "Bastion-Host"
+#    Name = "Bastion-Host-${var.SUFFIX}"
 #  }
 #}
 ###################################
@@ -64,7 +64,7 @@ resource "aws_nat_gateway" "stellar_nat_gw" {
   subnet_id     = "${aws_subnet.public-subnet.id}"
 
   tags = {
-    Name = "gw NAT"
+    Name = "gw NAT-${var.SUFFIX}"
   }
 }
 
