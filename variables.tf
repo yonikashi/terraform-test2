@@ -86,7 +86,7 @@ variable "test_core_1_ami" {
 
 variable "test_core_2_ami" {
   description = "Default Node-2 AMI"
-  default = "ami-06aa0a01d289e025e"
+  default = "ami-026fedbbacb6e35f4"
 }
 
 variable "test_core_3_ami" {
