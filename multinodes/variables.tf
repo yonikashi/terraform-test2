@@ -95,27 +95,27 @@ variable "prometheus" {
 
 variable "test_core_1_ami" {
   description = "Default Node-1 AMI"
-  default = "ami-06aa0a01d289e025e"
+  default = "ami-08755ca1546ebe1e7"
 }
 
 variable "test_core_2_ami" {
   description = "Default Node-2 AMI"
-  default = "ami-026fedbbacb6e35f4"
+  default = "ami-08755ca1546ebe1e7"
 }
 
 variable "test_core_3_ami" {
   description = "Default Node-3 AMI"
-  default = "ami-0d08632fc8e34d3a0"
+  default = "ami-08755ca1546ebe1e7"
 }
 
 variable "test_core_4_ami" {
   description = "Default Node-4 AMI"
-  default = "ami-0111ad1f91718b63f"
+  default = "ami-08755ca1546ebe1e7"
 }
 
 variable "test_core_5_ami" {
   description = "Default Node-5 AMI"
-  default = "ami-07415f0e195ef2ea4"
+  default = "ami-08755ca1546ebe1e7"
 }
 
 variable "horizon_1_ami" {
@@ -125,7 +125,7 @@ variable "horizon_1_ami" {
 
 variable "test_load_client_ami" {
   description = "Load Test AMI"
-  default = "ami-05fa401652125616d"
+  default = "ami-0f38a2d9e036ded9e"
 }
 
 variable "test_watcher_core_1_ami" {
