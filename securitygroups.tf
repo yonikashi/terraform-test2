@@ -131,20 +131,11 @@ resource "aws_security_group" "stellar-sg" {
     #description = "ssh connection Bastion"
   }
 
-  egress {
-    from_port = 80
-    to_port = 80
-    protocol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-    #security_groups = ["${aws_security_group.bastion-sg.id}"]
-    #description = "ssh connection Bastion"
-  }
-
 
   vpc_id="${aws_vpc.Application-VPC.id}"
 
   tags = {
-    Name = "Stellar-SG"
+    Name = "Stellar-SG-${var.SUFFIX}"
   }
 }
 
