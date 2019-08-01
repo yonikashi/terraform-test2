@@ -1,10 +1,4 @@
-#!/bin/bash
-
-#echo -n "\"{" >> allnodes.txt
-for (( c=1; c<$1; c++ ))
-do
-   cat <<"EOF" > example
-resource "aws_lb" "node5-nlb-III" {
+resource "aws_lb" "node5-nlb-3" {
   name               = "node5-nlb-${var.SUFFIX}"
   internal           = true
   load_balancer_type = "network"
@@ -43,18 +37,3 @@ resource "aws_lb_target_group_attachment" "attach5" {
   port             = 11625
 }
 
-EOF
-
-sed '/^*III*/ s/'"$c"'/'  example >> setup-env.$c
-
-done
-##########################################
-allnodes=$(cat allnodes.txt)
-for (( c=1; c<=$1; c++ ))
-do
-sed '/^export[[:blank:]]*all_nodes=/ s/$/'"$allnodes"'/'  setup-env-a.$c >> setup-env.$c
-rm setup-env-a.$c
-#rm core-test-$c
-rm setup*
-done
-rm allnodes.txt

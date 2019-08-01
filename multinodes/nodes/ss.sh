@@ -33,3 +33,12 @@ rm setup-env-a.$c
 #rm core-test-$c
 done
 rm allnodes.txt
+
+
+
+#sed 's/III/'"$c"'/g' example > output.file
+for (( c=1; c<=$1; c++ ))
+do
+sed 's/III/'"$c"'/g' example > ../core-ec2-lb-$c.tf
+done
+
