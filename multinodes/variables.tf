@@ -32,7 +32,7 @@ variable "job_folder" {
 
 variable "job_workspace" {
   description = "SSH Public Key path"
-  default = "/var/jenkins_home/workspace/Test-Job3/"
+  default = "/var/jenkins_home/workspace/Test-Job5/"
 }
 
 variable "key_path" {
