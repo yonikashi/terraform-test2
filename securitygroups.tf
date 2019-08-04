@@ -6,13 +6,13 @@ resource "aws_security_group" "stellar-sg" {
   name = "stellar-sg-${var.SUFFIX}"
   description = "Allow incoming HTTP connections & SSH access"
 
-ingress {
-   from_port = -1
-   to_port = -1
-   protocol = "-1"
-   security_groups = ["${aws_security_group.stellar-sg.id}"]
-   description = "Allow Access within the SG"
-  }
+#ingress {
+#   from_port = -1
+#   to_port = -1
+#   protocol = "-1"
+#   security_groups = ["${aws_security_group.stellar-sg.id}"]
+#   description = "Allow Access within the SG"
+#  }
 
   ingress {
     from_port = 9090
@@ -121,14 +121,14 @@ ingress {
     description = "Prometheus in"
   }
 
-  egress {
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
+#  egress {
+#    from_port = 22
+#    to_port = 22
+#    protocol = "tcp"
     #cidr_blocks = ["0.0.0.0/0"]
     #security_groups = ["${aws_security_group.bastion-sg.id}"]
-    description = "ssh connection Bastion"
-  }
+#    description = "ssh connection Bastion"
+#  }
 
   egress {
     from_port = 9090
