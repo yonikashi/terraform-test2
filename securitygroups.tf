@@ -10,7 +10,7 @@ ingress {
    from_port = -1
    to_port = -1
    protocol = "-1"
-   security_groups = ["${aws_security_group.stellar-sg}"]
+   security_groups = ["${aws_security_group.stellar-sg.id}"]
    description = "Allow Access within the SG"
   }
 
@@ -143,7 +143,7 @@ ingress {
    from_port = -1
    to_port = -1
    protocol = "-1"
-   security_groups = ["${aws_security_group.stellar-sg}"]
+   security_groups = ["${aws_security_group.stellar-sg.id}"]
    description = "Allow Access within the SG"
   }
 
