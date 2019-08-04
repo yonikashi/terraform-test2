@@ -20,7 +20,7 @@ rm setup.$c
 done
 #./stellar-core --genseed | sed -e 's/^Public: //' | sed -e 's/^Secret seed: //' >> core-test-$1
 echo -n "core-test-$1 " >> allnodes.txt
-echo -n "'$(cat seeds/core-test-$1 | sed '2!d')'" >> allnodes.txt
+echo -n "$(cat seeds/core-test-$1 | sed '2!d')" >> allnodes.txt
 #rm core-test-$1
 #echo -n "}\"" >> allnodes.txt
 
