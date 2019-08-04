@@ -6,6 +6,14 @@ resource "aws_security_group" "stellar-sg" {
   name = "stellar-sg-${var.SUFFIX}"
   description = "Allow incoming HTTP connections & SSH access"
 
+ingress {
+   from_port = -1
+   to_port = -1
+   protocol = "-1"
+   security_groups = ["${aws_security_group.stellar-sg}"]
+   description = "Allow Access within the SG"
+  }
+
   ingress {
     from_port = 9090
     to_port = 9090
@@ -131,6 +139,13 @@ resource "aws_security_group" "stellar-sg" {
     #description = "ssh connection Bastion"
   }
 
+  egress {
+   from_port = -1
+   to_port = -1
+   protocol = "-1"
+   security_groups = ["${aws_security_group.stellar-sg}"]
+   description = "Allow Access within the SG"
+  }
 
   vpc_id="${aws_vpc.Application-VPC.id}"
 
