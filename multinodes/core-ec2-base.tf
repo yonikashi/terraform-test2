@@ -2,7 +2,8 @@
 # EC2 Prometheus Server   #
 ###########################
 resource "aws_instance" "prometheus_server" {
-   ami = "${var.prometheus}"
+   ami = "ami-0b72c54cab779f50a"
+   #ami = "${var.prometheus}"
    user_data = "${file("nodes/prometheus-env")}"
    instance_type = "t3.medium"
    key_name = "${aws_key_pair.default.id}"
