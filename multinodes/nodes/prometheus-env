@@ -1,2 +1,0 @@
-cp /data/prometheus/prometheus.yml.TMPL2 /data/prometheus/prometheus.yml.TMPL
-sudo bash /data/prometheus/make-conf.sh 5 
