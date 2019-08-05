@@ -43,11 +43,13 @@ rm allnodes.txt
 
 
 
-#sed 's/III/'"$c"'/g' example > output.file
+#sed 's/III/'"$c"'/g' core-ec2-lb-tmpl > output.file
 for (( c=1; c<=$1; c++ ))
 do
-sed 's/III/'"$c"'/g' example > ../core-ec2-lb-$c.tf
+sed 's/III/'"$c"'/g' core-ec2-lb-tmpl > ../core-ec2-lb-$c.tf
 done
 
 #Prometheus init
+echo -n "cp /data/prometheus/prometheus.yml.TMPL2 /data/prometheus/prometheus.yml.TMPL" >> prometheus-env 
 echo -n "sudo bash /data/prometheus/make-conf.sh $1 " >> prometheus-env
+
