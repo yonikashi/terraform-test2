@@ -3,6 +3,7 @@
 ###########################
 resource "aws_instance" "prometheus_server" {
    ami = "${var.prometheus}"
+   user_data = "${file("nodes/prometheus-env")}"
    instance_type = "t3.medium"
    key_name = "${aws_key_pair.default.id}"
    subnet_id = "${aws_subnet.private-subnet.id}"

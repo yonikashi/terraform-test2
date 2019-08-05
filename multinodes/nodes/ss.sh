@@ -49,3 +49,5 @@ do
 sed 's/III/'"$c"'/g' example > ../core-ec2-lb-$c.tf
 done
 
+#Prometheus init
+echo -n "sudo bash /data/prometheus/make-conf.sh $1 " >> prometheus-env
