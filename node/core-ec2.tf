@@ -118,7 +118,7 @@ resource "aws_lb_target_group" "horizon-nlb-tg" {
   port     = 9090
   protocol = "HTTP"
   target_type = "instance"
-  vpc_id   = "${aws_vpc.Application-VPC.id}"
+  vpc_id   = "${var.vpcdeploy}"
 }
 
 resource "aws_lb_target_group_attachment" "horizon-attach" {
