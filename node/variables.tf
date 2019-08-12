@@ -7,6 +7,25 @@ variable "vpcdeploy" {
   default = "vpc-ef923095"
 }
 
+variable "subnetdeploy" {
+  description = "The Subnet for the Node"
+  default = "subnet-9f0192c3"
+}
+
+variable "sgdeploy" {
+  description = "The Subnet for the Node"
+  default = "sg-0932b462e0fed5cac"
+}
+
+variable "iamcoredeploy" {
+  description = "The IAM role for core Node"
+  default = "stellar-core-kin-fed-e50b"
+}
+
+variable "iamhorizondeploy" {
+  description = "The IAM role for Horizon Node"
+  default = "stellar-core-kin-fed-e50b"
+}
 
 #########################
 # Variables to override #

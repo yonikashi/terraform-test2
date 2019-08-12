@@ -53,18 +53,18 @@ resource "aws_key_pair" "default" {
 # Define NAT gateway to Private Subnet
 ###################################
 
-resource "aws_eip" "nat" {
+#resource "aws_eip" "nat" {
   #instance = "${aws_instance.web.id}"
-  vpc      = true
-}
+#  vpc      = true
+#}
 
 
-resource "aws_nat_gateway" "stellar_nat_gw" {
-  allocation_id = "${aws_eip.nat.id}"
-  subnet_id     = "${aws_subnet.public-subnet.id}"
+#resource "aws_nat_gateway" "stellar_nat_gw" {
+#  allocation_id = "${aws_eip.nat.id}"
+#  subnet_id     = "${aws_subnet.public-subnet.id}"
 
-  tags = {
-    Name = "gw NAT-${var.SUFFIX}"
-  }
-}
+#  tags = {
+#    Name = "gw NAT-${var.SUFFIX}"
+#  }
+#}
 
