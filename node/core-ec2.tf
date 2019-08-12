@@ -3,6 +3,7 @@
 #################
 resource "aws_instance" "horizon-test-fed" {
    ami = "${data.aws_ami.latest-ubuntu.id}"
+   user_data = "${file("userdata-core.txt")}"
    instance_type = "c5.large"
    key_name = "${aws_key_pair.default.id}"
    subnet_id = "${var.subnetdeploy}"
@@ -25,6 +26,7 @@ root_block_device {
 ##################
 resource "aws_instance" "core-test-fed" {
    ami = "${data.aws_ami.latest-ubuntu.id}"
+   user_data = "${file("userdata-core.txt")}"
    instance_type = "c5.large"
    key_name = "${aws_key_pair.default.id}"
    subnet_id = "${var.subnetdeploy}"
