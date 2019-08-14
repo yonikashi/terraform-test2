@@ -17,7 +17,7 @@ variable "sgdeploy" {
   default = "sg-0932b462e0fed5cac"
 }
 
-variable "sgdeploy" {
+variable "sgdeploy-horizon" {
   description = "The Subnet for the Node"
   default = "sg-011ec76cdc2f0b12a"
 }
@@ -154,7 +154,7 @@ variable "test_core_5_ami" {
 
 variable "horizon_1_ami" {
   description = "Default Horizon-1 AMI"
-  default = "ami-03e62225337bce92a"
+  default = "ami-0bb19713c345bfbc2"
 }
 
 variable "test_load_client_ami" {
