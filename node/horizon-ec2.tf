@@ -2,7 +2,8 @@
 # EC2 Horizon  ##
 #################
 resource "aws_instance" "horizon-test-fed" {
-   ami = "${data.aws_ami.latest-ubuntu.id}"
+   ami  = "${var.horizon_1_ami}"
+   #ami = "${data.aws_ami.latest-ubuntu.id}"
    user_data = "${file("userdata-core.txt")}"
    instance_type = "c5.large"
    key_name = "${aws_key_pair.default.id}"

@@ -149,7 +149,7 @@ variable "test_core_5_ami" {
 
 variable "horizon_1_ami" {
   description = "Default Horizon-1 AMI"
-  default = "ami-0752ca2cd8405d12e"
+  default = "ami-03e62225337bce92a"
 }
 
 variable "test_load_client_ami" {
