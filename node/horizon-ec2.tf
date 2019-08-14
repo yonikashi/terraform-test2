@@ -8,7 +8,7 @@ resource "aws_instance" "horizon-test-fed" {
    instance_type = "c5.large"
    key_name = "${aws_key_pair.default.id}"
    subnet_id = "${var.subnetdeploy}"
-   vpc_security_group_ids = ["${var.sgdeploy}"]
+   vpc_security_group_ids = ["${var.sgdeploy-horizon}"]
    associate_public_ip_address = false
    source_dest_check = false
    iam_instance_profile = "${var.iamcoredeploy}"

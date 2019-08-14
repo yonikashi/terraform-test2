@@ -17,6 +17,11 @@ variable "sgdeploy" {
   default = "sg-0932b462e0fed5cac"
 }
 
+variable "sgdeploy" {
+  description = "The Subnet for the Node"
+  default = "sg-011ec76cdc2f0b12a"
+}
+
 variable "iamcoredeploy" {
   description = "The IAM role for core Node"
   default = "stellar-core-kin-fed-e50b"
