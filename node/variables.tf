@@ -129,7 +129,7 @@ variable "prometheus" {
 
 variable "test_core_ami" {
   description = "Default Node-1 AMI"
-  default = "ami-06d47c354a69ba4d6"
+  default = "ami-0b29474ba5a39290c"
 }
 
 variable "test_core_2_ami" {
@@ -154,7 +154,7 @@ variable "test_core_5_ami" {
 
 variable "horizon_1_ami" {
   description = "Default Horizon-1 AMI"
-  default = "ami-0380272e4e82b8129"
+  default = "ami-0c546fc5c3ed0a93d"
 }
 
 variable "test_load_client_ami" {
