@@ -40,7 +40,7 @@ resource "aws_lb" "horizon-nlb" {
 
 resource "aws_lb_listener" "horizon_front_end" {
   load_balancer_arn = "${aws_lb.horizon-nlb.arn}"
-  port              = "9090"
+  port              = "80"
   protocol          = "HTTP"
 
   default_action {
@@ -52,7 +52,7 @@ resource "aws_lb_listener" "horizon_front_end" {
 
 resource "aws_lb_target_group" "horizon-nlb-tg" {
   name     = "horizon-alb-tg-${var.SUFFIX}"
-  port     = 9090
+  port     = 80
   protocol = "HTTP"
   target_type = "instance"
   vpc_id   = "${var.vpcdeploy}"
@@ -61,5 +61,5 @@ resource "aws_lb_target_group" "horizon-nlb-tg" {
 resource "aws_lb_target_group_attachment" "horizon-attach" {
   target_group_arn = "${aws_lb_target_group.horizon-nlb-tg.arn}"
   target_id        = "${aws_instance.horizon-test-fed.id}"
-  port             = 9090
+  port             = 80
 }
