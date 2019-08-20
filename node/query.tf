@@ -16,3 +16,13 @@ owners = ["099720109477"] # Canonical
       values = ["available"]
   }
 }
+
+data "aws_ebs_snapshot" "ebs_volume" {
+  most_recent = true
+  owners      = ["self"]
+
+  filter {
+    name   = "tag:Name"
+    values = ["LatestCoreData3"]
+  }
+}

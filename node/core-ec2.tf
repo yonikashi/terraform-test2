@@ -18,7 +18,8 @@ root_block_device {
   }
 ebs_block_device {
     device_name = "/dev/sdf"
-    snapshot_id = "${var.latestcoresnap}"
+    snapshot_id = "${data.aws_ebs_snapshot.ebs_volume.id}"
+    #snapshot_id = "${var.latestcoresnap}"
 }
   tags = {
     Name = "core-test-fed-${var.SUFFIX}"
