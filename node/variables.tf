@@ -61,12 +61,12 @@ variable "DB_IDENTIFIER" { default = "stellar-core-db" }
 #####################
 variable "job_folder" {
   description = "SSH Public Key path"
-  default = "terraform-test2"
+  #default = "terraform-test2"
 }
 
 variable "job_workspace" {
   description = "SSH Public Key path"
-  default = "/var/jenkins_home/workspace/Test-Job5/"
+  #default = "/var/jenkins_home/workspace/Test-Job5/"
 }
 
 variable "key_path" {
