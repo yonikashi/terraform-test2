@@ -131,7 +131,7 @@ variable "prometheus" {
 
 variable "test_core_ami" {
   description = "Default Node-1 AMI"
-  default = "ami-0b29474ba5a39290c"
+  default = "ami-0160fea6f46fcaf25"
 }
 
 variable "test_core_2_ami" {
