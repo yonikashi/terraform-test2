@@ -16,7 +16,10 @@ root_block_device {
     volume_size = "50"
     volume_type = "standard"
   }
-
+ebs_block_device {
+    device_name = "/dev/sdf"
+    snapshot_id = "${var.latestcoresnap}"
+}
   tags = {
     Name = "core-test-fed-${var.SUFFIX}"
   }
