@@ -56,7 +56,7 @@ variable "DB_PASS" { default = "defaultpassword" }
 variable "DB_NAME" { default = "core" }
 variable "DB_IDENTIFIER" { default = "stellar-core-db" }
 
-variable "latestcoresnap" { default = "snap-07fab9e2197c60cad" }
+variable "latestcoresnap" { default = "snap-0484609ba04097414" }
 
 #####################
 # Key to launch EC2 #
